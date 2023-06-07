@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "863881504041",
+    "project_id": "cinepebble-social",
+    "storage_bucket": "cinepebble-social.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863881504041:android:a1d30130c79d33bd918338",
+        "android_client_info": {
+          "package_name": "com.naveenchand.cinepebble_social"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "863881504041-m1rttfbud7md876ctlendcejrla8aksa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-rFFyKd9TV_z_IElvCPGc8hdwYJKqz4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "863881504041-ctv4n2ov201jdfpi8eduph0bjorkjt2e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "863881504041-cv6otisec0534fmmbdpu1i3vlv5jt136.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.naveenchand.cinepebble"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
