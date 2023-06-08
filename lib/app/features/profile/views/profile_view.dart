@@ -1,4 +1,5 @@
 import 'package:cinepebble_social/app/features/profile/views/profile_edit_view.dart';
+import 'package:cinepebble_social/app/features/profile/views/user_posts_view.dart';
 import 'package:cinepebble_social/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -15,9 +16,6 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('Profile'),
-      // ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
@@ -108,6 +106,9 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
                   ],
                 ),
               ),
+              const SizedBox(height: 30.0),
+
+              const UserPostsView(),
             ],
           ),
         ),

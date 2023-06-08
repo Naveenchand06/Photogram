@@ -19,15 +19,33 @@ extension Present<T> on AlertDialogModel<T> {
     return showDialog(
       context: context,
       builder: (context) {
-        return CupertinoAlertDialog(
-          title: Text(title),
-          content: Text(message),
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.0),
+          ),
+          title: Text(
+            title,
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          content: Text(
+            message,
+            style: const TextStyle(
+              fontWeight: FontWeight.w500,
+            ),
+          ),
           actions: buttons.entries.map((entry) {
             return TextButton(
                 onPressed: () {
                   Navigator.of(context).pop(entry.value);
                 },
-                child: Text(entry.key));
+                child: Text(
+                  entry.key,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ));
           }).toList(),
         );
       },

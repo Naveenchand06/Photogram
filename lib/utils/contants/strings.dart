@@ -2,7 +2,10 @@ import 'package:flutter/foundation.dart';
 
 @immutable
 class Strings {
-  static const appName = 'Cinepebble!';
+  static const appName = 'Cinepebbl!';
+  static const explore = 'Explore';
+  static const profile = 'Profile';
+
   static const loading = 'Loading...';
   static const welcomeToAppName = 'Welcome to ${Strings.appName}';
   static const youHaveNoPosts =

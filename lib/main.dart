@@ -34,6 +34,8 @@ class MyApp extends StatelessWidget {
           backgroundColor: AppColor.appColor,
           elevation: 1.0,
         ),
+        primaryColor: AppColor.appColor,
+        focusColor: AppColor.appColor,
       ),
       home: const App(),
     );
