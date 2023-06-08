@@ -1,7 +1,9 @@
 import 'package:cinepebble_social/app/features/posts/models/file_type.dart';
 import 'package:cinepebble_social/app/features/posts/repo/post_setting_provider.dart';
 import 'package:cinepebble_social/app/features/posts/views/create_post_view.dart';
+import 'package:cinepebble_social/app/features/profile/views/profile_view.dart';
 import 'package:cinepebble_social/utils/app_colors.dart';
+import 'package:cinepebble_social/utils/contants/strings.dart';
 import 'package:cinepebble_social/utils/helpers/image_upload_helper.dart';
 import 'package:flutter/material.dart';
 
@@ -18,9 +20,10 @@ class _HomeScreenState extends ConsumerState<HomeView> {
   int _currentIndex = 0;
   final List<Widget> _screens = const [
     // ExploreScreen(),
-    Center(child: Icon(Icons.home_outlined)),
+    // Center(child: Icon(Icons.home_outlined)),
     Center(child: Icon(Icons.favorite)),
     Center(child: Icon(Icons.person_2)),
+    ProfileView(),
 
     // ProfileScreen(),
   ];
@@ -30,7 +33,7 @@ class _HomeScreenState extends ConsumerState<HomeView> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Cinepebble',
+          Strings.appName,
           style: Theme.of(context).textTheme.headlineSmall?.copyWith(
               fontWeight: FontWeight.bold,
               color: AppColor.whiteColor,

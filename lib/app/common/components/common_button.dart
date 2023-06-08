@@ -26,7 +26,13 @@ class CommonButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
           ),
         ),
-        child: Text(buttonTitle),
+        child: Text(
+          buttonTitle,
+          style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                fontWeight: FontWeight.w600,
+                color: AppColor.whiteColor,
+              ),
+        ),
       ),
     );
   }

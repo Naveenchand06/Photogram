@@ -27,7 +27,7 @@ class LoginView extends ConsumerWidget {
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 Text(
-                  'cinepebble_social',
+                  Strings.appName,
                   style: Theme.of(context)
                       .textTheme
                       .headlineSmall
