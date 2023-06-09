@@ -1,8 +1,10 @@
 import 'package:cinepebble_social/app/features/authentication/repo/auth_state_notifier.dart';
 import 'package:cinepebble_social/app/features/posts/models/file_type.dart';
 import 'package:cinepebble_social/app/features/posts/repo/post_setting_provider.dart';
+import 'package:cinepebble_social/app/features/posts/views/all_posts_view.dart';
 import 'package:cinepebble_social/app/features/posts/views/create_post_view.dart';
 import 'package:cinepebble_social/app/features/profile/views/profile_view.dart';
+import 'package:cinepebble_social/app/features/search/views/search_view.dart';
 import 'package:cinepebble_social/utils/app_colors.dart';
 import 'package:cinepebble_social/utils/contants/strings.dart';
 import 'package:cinepebble_social/utils/dialogs/alert_dialog_model.dart';
@@ -25,8 +27,8 @@ class _HomeScreenState extends ConsumerState<HomeView> {
   final List<Widget> _screens = const [
     // ExploreScreen(),
     // Center(child: Icon(Icons.home_outlined)),
-    Center(child: Icon(Icons.favorite)),
-    Center(child: Icon(Icons.person_2)),
+    AllPostsView(),
+    SearchView(),
     ProfileView(),
 
     // ProfileScreen(),

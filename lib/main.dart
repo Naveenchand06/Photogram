@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
         ),
         primaryColor: AppColor.appColor,
         focusColor: AppColor.appColor,
+        dividerColor: Colors.grey,
       ),
       home: const App(),
     );

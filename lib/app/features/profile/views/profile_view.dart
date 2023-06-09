@@ -81,7 +81,7 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
                   children: [
                     InkWell(
                       onTap: () {},
-                      child: FaIcon(
+                      child: const FaIcon(
                         FontAwesomeIcons.twitter,
                         color: AppColor.googleColor,
                         size: 30.0,
@@ -89,7 +89,7 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
                     ),
                     InkWell(
                       onTap: () {},
-                      child: FaIcon(
+                      child: const FaIcon(
                         FontAwesomeIcons.linkedinIn,
                         // color: AppColor.googleColor,
                         size: 30.0,
@@ -97,7 +97,7 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
                     ),
                     InkWell(
                       onTap: () {},
-                      child: FaIcon(
+                      child: const FaIcon(
                         FontAwesomeIcons.instagram,
                         // color: AppColor.googleColor,
                         size: 30.0,

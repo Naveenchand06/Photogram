@@ -3,6 +3,7 @@ import 'package:cinepebble_social/app/common/providers/user_id_provider.dart';
 import 'package:cinepebble_social/app/features/authentication/repo/user_info_model_provider.dart';
 import 'package:cinepebble_social/app/features/comments/models/comment.dart';
 import 'package:cinepebble_social/app/features/comments/repo/delete_comment_provider.dart';
+import 'package:cinepebble_social/utils/app_colors.dart';
 import 'package:cinepebble_social/utils/contants/strings.dart';
 import 'package:cinepebble_social/utils/dialogs/alert_dialog_model.dart';
 import 'package:cinepebble_social/utils/dialogs/delete_dialog.dart';
@@ -42,7 +43,9 @@ class CommentTile extends ConsumerWidget {
       },
       error: (error, stackTrace) => const SmallErrorAnimationView(),
       loading: () => const Center(
-        child: CircularProgressIndicator(),
+        child: CircularProgressIndicator(
+          color: AppColor.appColor,
+        ),
       ),
     );
   }

@@ -4,6 +4,7 @@ import 'package:cinepebble_social/app/common/animations/error_animation_view.dar
 import 'package:cinepebble_social/app/common/animations/loading_animation_view.dart';
 import 'package:cinepebble_social/app/features/posts/repo/user_posts_provider.dart';
 import 'package:cinepebble_social/app/features/posts/views/posts_grid_view.dart';
+import 'package:cinepebble_social/utils/app_colors.dart';
 import 'package:cinepebble_social/utils/contants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -38,7 +39,11 @@ class UserPostsView extends ConsumerWidget {
             return const ErrorAnimationView();
           },
           loading: () {
-            return const LoadingAnimationView();
+            return const Center(
+              child: CircularProgressIndicator(
+                color: AppColor.appColor,
+              ),
+            );
           },
         ),
       ),
