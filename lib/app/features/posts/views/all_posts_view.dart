@@ -2,7 +2,8 @@ import 'package:cinepebble_social/app/common/animations/empty_contents_with_text
 import 'package:cinepebble_social/app/common/animations/error_animation_view.dart';
 import 'package:cinepebble_social/app/common/animations/loading_animation_view.dart';
 import 'package:cinepebble_social/app/features/posts/repo/all_posts_provider.dart';
-import 'package:cinepebble_social/app/features/posts/views/posts_grid_view.dart';
+import 'package:cinepebble_social/app/features/posts/views/posts_list_view.dart';
+import 'package:cinepebble_social/utils/app_colors.dart';
 import 'package:cinepebble_social/utils/contants/strings.dart';
 import 'package:flutter/material.dart';
 
@@ -15,9 +16,10 @@ class AllPostsView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final posts = ref.watch(allPostsProvider);
     return RefreshIndicator(
+      color: AppColor.appColor,
       onRefresh: () {
         return Future.delayed(
-          const Duration(seconds: 1),
+          const Duration(seconds: 2),
         );
       },
       child: posts.when(
@@ -27,7 +29,7 @@ class AllPostsView extends ConsumerWidget {
               text: Strings.noPostsAvailable,
             );
           } else {
-            return PostsGridView(posts: posts);
+            return PostsListView(posts: posts);
           }
         },
         error: (error, stackTrace) {

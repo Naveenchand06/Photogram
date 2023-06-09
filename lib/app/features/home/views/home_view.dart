@@ -38,6 +38,7 @@ class _HomeScreenState extends ConsumerState<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: getAppBar(_currentIndex),
+      backgroundColor: const Color.fromARGB(255, 221, 217, 249),
       body: _screens[_currentIndex],
       floatingActionButton: FloatingActionButton(
         backgroundColor: AppColor.appColor,

@@ -1,5 +1,4 @@
 import 'package:cinepebble_social/app/common/components/post_thumbnail_view.dart';
-import 'package:cinepebble_social/app/features/comments/views/post_comments_view.dart';
 import 'package:cinepebble_social/app/features/posts/models/post.dart';
 import 'package:cinepebble_social/app/features/posts/views/post_details_view.dart';
 import 'package:flutter/material.dart';

@@ -18,6 +18,7 @@ import 'package:cinepebble_social/utils/contants/strings.dart';
 import 'package:cinepebble_social/utils/dialogs/alert_dialog_model.dart';
 import 'package:cinepebble_social/utils/dialogs/delete_dialog.dart';
 import 'package:cinepebble_social/utils/enums/date_sorting.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:share_plus/share_plus.dart';
@@ -66,7 +67,7 @@ class _PostDetailsViewState extends ConsumerState<PostDetailsView> {
                   final url = postWithComments.post.fileUrl;
                   Share.share(url, subject: Strings.checkOutThisPost);
                 },
-                icon: const Icon(Icons.share),
+                icon: const Icon(CupertinoIcons.share),
               );
             },
             error: (error, stackTrace) {

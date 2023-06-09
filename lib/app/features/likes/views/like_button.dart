@@ -22,6 +22,7 @@ class LikeButton extends ConsumerWidget {
     return hasLiked.when(
       data: (hasLiked) {
         return IconButton(
+          padding: const EdgeInsets.all(0.0),
           onPressed: () {
             final userId = ref.read(userIdProvider);
             if (userId == null) {

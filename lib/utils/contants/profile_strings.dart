@@ -25,11 +25,11 @@ class ProfileStrings {
 
 @immutable
 class ProfileKey {
+  static const uid = "uid";
   static const username = "username";
   static const mobile = "mobile";
-  static const whatIdo = "whatIdo";
+  static const whatIdo = "what_i_do";
   static const bio = "bio";
-
   static const twitter = "twitter";
   static const linkedIn = "linkedin";
   static const instagram = "instagram";

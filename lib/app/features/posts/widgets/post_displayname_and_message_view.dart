@@ -8,9 +8,11 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class PostDisplayNameAndMessageView extends ConsumerWidget {
   final Post post;
+  final bool addPadding;
   const PostDisplayNameAndMessageView({
     super.key,
     required this.post,
+    this.addPadding = true,
   });
 
   @override
@@ -19,7 +21,7 @@ class PostDisplayNameAndMessageView extends ConsumerWidget {
     return userInfoModel.when(
       data: (userInfoModel) {
         return Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(addPadding ? 8.0 : 0.0),
           child: RichTwoPartsText(
             leftPart: userInfoModel.displayName,
             rightPart: post.message,

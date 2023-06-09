@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart' show immutable;
 @immutable
 class ProfilePayload extends MapView<String, dynamic> {
   ProfilePayload({
+    required String uid,
     required String username,
     required String mobile,
     required String whatIdo,
@@ -14,6 +15,7 @@ class ProfilePayload extends MapView<String, dynamic> {
     required String instagram,
   }) : super(
           {
+            ProfileKey.uid: uid,
             ProfileKey.username: username,
             ProfileKey.mobile: username,
             ProfileKey.whatIdo: whatIdo,
