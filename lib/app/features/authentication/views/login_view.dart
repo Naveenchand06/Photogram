@@ -6,6 +6,7 @@ import 'package:cinepebble_social/app/features/authentication/widgets/login_view
 import 'package:cinepebble_social/utils/app_colors.dart';
 import 'package:cinepebble_social/utils/contants/strings.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class LoginView extends ConsumerWidget {
@@ -19,23 +20,40 @@ class LoginView extends ConsumerWidget {
         child: Center(
           child: SingleChildScrollView(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  'Welcome to',
-                  style: Theme.of(context).textTheme.titleLarge,
+                // Text(
+                //   'Welcome',
+                //   style: Theme.of(context).textTheme.headlineSmall,
+                // ),
+                const SizedBox(
+                  height: 10.0,
                 ),
-                Text(
-                  Strings.appName,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall
-                      ?.copyWith(fontWeight: FontWeight.bold),
+                CircleAvatar(
+                  radius: 100.0,
+                  backgroundColor: AppColor.appColor,
+                  child: Text(
+                    Strings.appName,
+                    style: GoogleFonts.caveat(
+                      fontSize: 40.0,
+                      color: AppColor.whiteColor,
+                    ),
+                  ),
+                  // backgroundImage: AssetImage('assets/profile_image.jpg'),
                 ),
+
+                // Text(
+                //   Strings.appName,
+                //   style: Theme.of(context)
+                //       .textTheme
+                //       .headlineSmall
+                //       ?.copyWith(fontWeight: FontWeight.bold),
+                // ),
                 const DividerWithMargins(),
                 Text(
                   Strings.logIntoYourAccount,
+                  textAlign: TextAlign.center,
                   style: Theme.of(context)
                       .textTheme
                       .titleSmall
@@ -46,7 +64,7 @@ class LoginView extends ConsumerWidget {
                   onPressed:
                       ref.read(authStateProvider.notifier).loginWithGoogle,
                   style: TextButton.styleFrom(
-                    backgroundColor: AppColor.loginButtonColor,
+                    backgroundColor: AppColor.appColor.withOpacity(0.6),
                     foregroundColor: AppColor.loginButtonTextColor,
                     textStyle: const TextStyle(
                       fontWeight: FontWeight.w500,
@@ -59,10 +77,11 @@ class LoginView extends ConsumerWidget {
                   onPressed:
                       ref.read(authStateProvider.notifier).loginWithGoogle,
                   style: TextButton.styleFrom(
-                    backgroundColor: AppColor.loginButtonColor,
+                    backgroundColor: AppColor.appColor.withOpacity(0.6),
                     foregroundColor: AppColor.loginButtonTextColor,
                     textStyle: const TextStyle(
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.bold,
+                      color: AppColor.whiteColor,
                     ),
                   ),
                   child: const FacebookButton(),

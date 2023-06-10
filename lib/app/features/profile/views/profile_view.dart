@@ -91,9 +91,21 @@ class _ProfileViewState extends ConsumerState<ProfileView> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 20.0),
-
-                  const CircleAvatar(
+                  CircleAvatar(
                     radius: 64.0,
+                    backgroundColor: AppColor.appColor,
+
+                    child: Image.network(
+                      '',
+                      fit: BoxFit.fill,
+                      errorBuilder: (context, error, stackTrace) {
+                        return const Icon(
+                          Icons.person,
+                          size: 50.0,
+                          color: AppColor.whiteColor,
+                        );
+                      },
+                    ),
                     // backgroundImage: AssetImage('assets/profile_image.jpg'),
                   ),
                   const SizedBox(height: 16.0),

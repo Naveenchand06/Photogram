@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 
 @immutable
 class Strings {
-  static const appName = 'Cinepebbl!';
+  static const appName = 'Photogram!';
   static const explore = 'Explore';
   static const profile = 'Profile';
 

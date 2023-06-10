@@ -2,11 +2,14 @@ import 'package:cinepebble_social/app/common/animations/error_animation_view.dar
 import 'package:cinepebble_social/app/common/components/common_button.dart';
 import 'package:cinepebble_social/app/common/components/common_text_field.dart';
 import 'package:cinepebble_social/app/common/providers/user_id_provider.dart';
+import 'package:cinepebble_social/app/features/posts/models/file_type.dart';
 import 'package:cinepebble_social/app/features/profile/models/profile_payload.dart';
+import 'package:cinepebble_social/app/features/profile/repo/profile_image_upload_provider.dart';
 import 'package:cinepebble_social/app/features/profile/repo/update_user_profile_provider.dart';
 import 'package:cinepebble_social/app/features/profile/repo/user_profile_provider.dart';
 import 'package:cinepebble_social/utils/app_colors.dart';
 import 'package:cinepebble_social/utils/contants/profile_strings.dart';
+import 'package:cinepebble_social/utils/helpers/image_upload_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -69,9 +72,57 @@ class _ProfileEditViewState extends ConsumerState<ProfileEditView> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const CircleAvatar(
-                      radius: 64.0,
-                      // backgroundImage: AssetImage('assets/profile_image.jpg'),
+                    GestureDetector(
+                      onTap: () async {
+                        final imageFile =
+                            await ImagePickerHelper.pickImageFromGallery();
+                        if (imageFile == null) {
+                          return;
+                        }
+                        ref.read(profileImageUploadProvider.notifier).upload(
+                            file: imageFile,
+                            fileType: FileType.image,
+                            userId: userId ?? '');
+                      },
+                      child: Stack(
+                        children: [
+                          CircleAvatar(
+                            radius: 64.0,
+                            backgroundColor: AppColor.appColor,
+
+                            child: Image.network(
+                              '',
+                              fit: BoxFit.fill,
+                              errorBuilder: (context, error, stackTrace) {
+                                return const Icon(
+                                  Icons.person,
+                                  size: 50.0,
+                                  color: AppColor.whiteColor,
+                                );
+                              },
+                            ),
+                            // backgroundImage: AssetImage('assets/profile_image.jpg'),
+                          ),
+                          // CircleAvatar(
+                          //   radius: 64.0,
+                          //   backgroundColor: Colors.transparent,
+                          //   child: Center(
+                          //     child: Column(
+                          //       mainAxisAlignment: MainAxisAlignment.end,
+                          //       mainAxisSize: MainAxisSize.min,
+                          //       children: const [
+                          //         // Icon(Icons.camera),
+                          //         Text(
+                          //           '\n\n\nEdit Profile',
+                          //           style:
+                          //               TextStyle(color: AppColor.whiteColor),
+                          //         )
+                          //       ],
+                          //     ),
+                          //   ),
+                          // ),
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 16.0),
                     CommonTextField(
