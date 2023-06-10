@@ -30,7 +30,10 @@ class PostsListView extends StatelessWidget {
             );
           },
           child: Container(
-            margin: const EdgeInsets.symmetric(vertical: 12.0),
+            margin: const EdgeInsets.symmetric(
+              vertical: 16.0,
+              horizontal: 20.0,
+            ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16.0),
               child: Column(
