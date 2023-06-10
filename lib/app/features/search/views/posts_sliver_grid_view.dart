@@ -13,27 +13,34 @@ class PostsSliverGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      padding: const EdgeInsets.all(8.0),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        mainAxisSpacing: 8.0,
-        crossAxisSpacing: 8.0,
+    double sw = MediaQuery.of(context).size.width;
+    double sh = MediaQuery.of(context).size.width;
+
+    return SizedBox(
+      width: sw * 90 / 100,
+      height: sh * 85 / 100,
+      child: GridView.builder(
+        padding: const EdgeInsets.all(8.0),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          mainAxisSpacing: 8.0,
+          crossAxisSpacing: 8.0,
+        ),
+        itemCount: posts.length,
+        itemBuilder: (context, index) {
+          final post = posts.elementAt(index);
+          return PostThumbnailView(
+            post: post,
+            onTapped: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => PostDetailsView(post: post),
+                ),
+              );
+            },
+          );
+        },
       ),
-      itemCount: posts.length,
-      itemBuilder: (context, index) {
-        final post = posts.elementAt(index);
-        return PostThumbnailView(
-          post: post,
-          onTapped: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) => PostDetailsView(post: post),
-              ),
-            );
-          },
-        );
-      },
     );
   }
 }

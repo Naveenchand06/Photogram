@@ -3,6 +3,7 @@ import 'package:cinepebble_social/app/features/posts/models/file_type.dart';
 import 'package:cinepebble_social/app/features/posts/repo/post_setting_provider.dart';
 import 'package:cinepebble_social/app/features/posts/views/all_posts_view.dart';
 import 'package:cinepebble_social/app/features/posts/views/create_post_view.dart';
+import 'package:cinepebble_social/app/features/profile/views/profile_edit_view.dart';
 import 'package:cinepebble_social/app/features/profile/views/profile_view.dart';
 import 'package:cinepebble_social/app/features/search/views/search_view.dart';
 import 'package:cinepebble_social/utils/app_colors.dart';
@@ -136,7 +137,7 @@ class _HomeScreenState extends ConsumerState<HomeView> {
     );
   }
 
-  AppBar getAppBar(int num) {
+  AppBar? getAppBar(int num) {
     switch (num) {
       case 1:
         return AppBar(
@@ -150,16 +151,7 @@ class _HomeScreenState extends ConsumerState<HomeView> {
           ),
         );
       case 2:
-        return AppBar(
-          title: Text(
-            Strings.profile,
-            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: AppColor.whiteColor,
-                  fontSize: 18.0,
-                ),
-          ),
-        );
+        return null;
       default:
         return AppBar(
           title: Text(

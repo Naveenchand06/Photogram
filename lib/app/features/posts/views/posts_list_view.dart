@@ -38,16 +38,17 @@ class PostsListView extends StatelessWidget {
                   Image.network(
                     post.thumbnailUrl,
                     fit: BoxFit.cover,
-                    height: 180.0,
+                    height: 230.0,
                     width: double.infinity,
                   ),
                   Container(
                     padding: const EdgeInsets.all(2.0),
                     color: Colors.white70,
-                    height: 80.0,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
+                        const SizedBox(height: 4.0),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8.0),
                           child: PostDisplayNameAndMessageView(

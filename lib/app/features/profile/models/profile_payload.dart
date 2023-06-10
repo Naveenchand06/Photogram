@@ -17,7 +17,7 @@ class ProfilePayload extends MapView<String, dynamic> {
           {
             ProfileKey.uid: uid,
             ProfileKey.username: username,
-            ProfileKey.mobile: username,
+            ProfileKey.mobile: mobile,
             ProfileKey.whatIdo: whatIdo,
             ProfileKey.bio: bio,
             ProfileKey.twitter: twitter,
