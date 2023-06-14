@@ -1,4 +1,4 @@
-# Photogram (Cinepebble)
+# Photogram 
 
 A social media app developed using Flutter.
 
